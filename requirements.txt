@@ -1,0 +1,7 @@
+rich
+google-generativeai
+pytubefix
+whisper
+bs4
+requests
+python-dotenv
