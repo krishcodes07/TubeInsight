@@ -1,7 +1,7 @@
 rich
 google-generativeai
 pytubefix
-whisper
+openai-whisper
 bs4
 requests
 python-dotenv

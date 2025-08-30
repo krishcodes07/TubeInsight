@@ -1,6 +1,6 @@
 # TubeInsight
 
-**TubeInsight** is a Python-based tool that extracts YouTube video transcripts, summarizes them using gemini-1.5-pro, and allows interactive Q\&A about the content. It also integrates OpenAI Whisper for audio transcription if captions are unavailable.
+**TubeInsight** is a Python-based tool that extracts YouTube video transcripts, summarizes them using gemini-2.5-flash, and allows interactive Q\&A about the content. It also integrates OpenAI Whisper for audio transcription if captions are unavailable.
 
 ---
 
