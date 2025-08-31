@@ -3,7 +3,13 @@ import requests
 import whisper
 from bs4 import BeautifulSoup
 
-whisper_model = whisper.load_model("small")
+_whisper_model = None 
+
+def get_whisper_model():
+    global _whisper_model
+    if _whisper_model is None:
+        _whisper_model = whisper.load_model("small")
+    return _whisper_model
 
 def get_youtube_transcript(url: str) -> tuple[str, str | None]:
     transcript_url = "https://youtubetotranscript.com/transcript"
@@ -37,7 +43,8 @@ def get_youtube_transcript(url: str) -> tuple[str, str | None]:
 
 def transcribe_with_whisper(audio_file: str) -> str:
     try:
-        result = whisper_model.transcribe(audio_file, language="en")
+        model = get_whisper_model()
+        result = model.transcribe(audio_file, language="en")
         text = result.get("text", "").strip()
         if text:
             with open("data/transcript.txt", "w", encoding="utf-8") as f:
